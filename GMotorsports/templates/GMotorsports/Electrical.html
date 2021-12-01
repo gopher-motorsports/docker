@@ -1,0 +1,25 @@
+{% extends "GMotorsports/base.html" %}
+{% load static cms_tags sekizai_tags %}
+{% block content %}
+    <div id="main" class="wrapper style1">
+       <div class="container">
+        <header class="major">
+            <h2>Electrical Subteam</h2>
+            <div style="color: white!important;">{% render_placeholder Electrical.mainp "640" %}</div>
+            <!--<p>The Electrical subteam is responsible for the car's power distribution system, engine, transmission, and aerodynamic control systems, and all sensing, datalogging, and telemetry functionality. With such wide-ranging projects, the electrical Electrical subteam is necessarily multi-disciplinary in nature and finds itself working with all other subteams to ensure that their specific sensing and control requirements are met. On Electrical, you might find yourself designing and assembling custom PCBs, writing embedded software to implement performance-critical control systems, or designing and assembling a custom mil-spec wiring harness. Though many of our members are EE, CE, or CS majors, anyone who is interested in the application of electronics, sensors, or control systems is more than welcome to join.</p>-->
+        </header>
+
+           <div class="container row d-flex justify-content-center ml-subteam">
+               <div>
+                   <img class="fit-subteam" src="{% static 'GMotorsports/images/Henry_OCallaghan.jpg' %}">
+               </div>
+               <div class="text-center">
+                   <h3>Henry O'Callaghan</h3>
+                   <p>Electrical Lead</p>
+                   <p><b>Email: </b>ocall018@umn.edu</p>
+               </div>
+           </div>
+
+        </div>
+    </div>
+{% endblock %}

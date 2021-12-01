@@ -1,0 +1,20 @@
+{% extends "GMotorsports/base.html" %}
+{% load static cms_tags sekizai_tags %}
+{% block content %}
+<div id="main" class="wrapper style1">
+    <div class="container">
+        <header class="major">
+            <h2>Interested in Donating?</h2>
+            <div style="color: white!important;">{% render_placeholder DonateCMS.donatep "640" %}</div>
+            <!--<p>Gopher Motorsports is a tax deductible, 501(c)(3) organization. Being 100% student-led, we rely on sponsors and donations to make this team a success. By donating to our team, you are supporting the training of the best engineering and business professionals for the future.</p>
+            <p>We appreciate donations of any size.</p>-->
+        </header>
+        <div id="boxes">
+            <div class="text-center">
+                <h4><a href="https://makingagift.umn.edu/give/fund.html?id=5521" class="button secondary" target="_blank">Donate</a></h4>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

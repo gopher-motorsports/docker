@@ -1,0 +1,39 @@
+{% extends "GMotorsports/base.html" %}
+{% load static cms_tags sekizai_tags %}
+{% block content %}
+
+    <div id="page-wrapper" class="mt-contact">
+
+        <!-- Contact Form -->
+        <section class="container">
+            <header class="major">
+                <h2>Join the Team</h2>
+            </header>
+
+                <iframe class="fit-video" width="560" height="315" align="left" src="https://www.youtube.com/embed/E5zC1ei30yQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div style="color: white!important;">{% render_placeholder JoinTeamCMS.jointeam "640" %}</div>
+                <!--
+                <p>
+                    Interested in Race Cars?
+                    Want to be part of the world's largest collegiate competition?
+                    We are looking for competitive, passionate individuals to join our team.
+                </p>
+
+                <p>
+                    Join our Team!
+                    You'll be challenged to design, manufacture and validate your designs, while learning skills that cannot be learned in the classroom.
+                    Our alumni work at companies like Polaris, SpaceX, NASA, Northrup Grumman, Roush, GM, Ford.
+                </p>
+                -->
+
+                <div id="boxes">
+                    <div class="text-center">
+                        <h4><a href="{% url 'contact' %}" class="button secondary">Contact Us to Join</a></h4>
+                    </div>
+                </div>
+
+        </section>
+
+    </div>
+
+{% endblock content %}

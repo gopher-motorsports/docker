@@ -1,0 +1,172 @@
+{% extends "GMotorsports/base.html" %}
+{% load static cms_tags sekizai_tags %}
+
+{% block javascript %}
+
+<script>
+	$(window).on('load', function()
+	{
+	  $('#grid').masonry({
+		   itemSelector : '.grid-item',
+		   columnWidth : '.grid-sizer',
+			percentPosition: true,
+		   isAnimated: true,
+		   animationOptions: {
+				duration: 700,
+				easing: 'linear',
+				queue: false
+		   }
+	  });
+	});
+</script>
+
+{% endblock %}
+
+{% block content %}
+
+			<!-- Banner -->
+				<section id="banner">
+					<div class="content">
+						<header>
+							<h2>UMN Formula SAE</h2>
+							<div style="color: white!important;">{% render_placeholder HomeCMS.rank "640" %}</div>
+							<!--<p>Gopher Motorsports is currently ranked #1 in Minnesota, #3 in the US and #31 in the World.</p>-->
+						</header>
+						<span class="image"><img src="{% static 'GMotorsports/images/GMBanner.jpg' %}" alt=""></span>
+					</div>
+					<a href="#one" class="goto-next scrolly">Next</a>
+				</section>
+
+			<!-- One -->
+				<section id="one" class="spotlight style1 bottom">
+					<span class="image fit main"><img src="{% static 'GMotorsports/images/car1.jpg' %}" alt="" /></span>
+					<div class="content">
+						<div class="container">
+							<div class="row">
+								<div class="col-4 col-12-medium mobile-row">
+									<header>
+										<div style="color: white!important;">{% render_placeholder HomeCMS.firstphead "640" %}</div>
+										<div style="color: white!important;">{% render_placeholder HomeCMS.firstp1 "640" %}</div>
+										<!--<h2>Formula SAE</h2>-->
+										<!--<p>An international collegiate design competition sanctioned by the
+										Society of Automotive Engineers</p>-->
+									</header>
+								</div>
+								<div class="col-4 col-12-medium mobile-row">
+									<div style="color: white!important;">{% render_placeholder HomeCMS.firstp2 "640" %}</div>
+									<!--<p>In Formula SAE students develop and build an open-wheeled,
+										open cockpit race car. In addition to being scored on their vehicle performance,
+										teams are also scored on their business logic and engineering competency.</p>-->
+								</div>
+								<div class="col-4 col-12-medium mobile-row">
+									<div style="color: white!important;">{% render_placeholder HomeCMS.firstp3 "640" %}</div>
+									<!--<p>After graduation, Formula SAE students are sought out for their passion
+										and attention to detail in developing highly-engineered,
+										high-performance products. Being a part of Gopher Motorsports
+										means developing life-long skills!</p>-->
+								</div>
+							</div>
+					</div>
+					<a href="#two" class="goto-next scrolly">Next</a>
+				</section>
+
+			<!-- Two -->
+				<section id="two" class="spotlight style2 right">
+					<span class="image fit main"><img src="{% static 'GMotorsports/images/car2.jpg' %}" alt="" /></span>
+					<div class="content">
+						<header>
+							<div style="color: white!important;">{% render_placeholder HomeCMS.secondphead "640" %}</div>
+							<div style="color: white!important;">{% render_placeholder HomeCMS.secondp1 "640" %}</div>
+							<!--<h2>Design. Manufacture. Market. Race.</h2>-->
+							<!--<p>We are the University of Minnesota Student Chapter of the Society of Automotive Engineers (SAE). </p>-->
+						</header>
+						<div style="color: white!important;">{% render_placeholder HomeCMS.secondp2 "640" %}</div>
+						<!--<p>Each year, we design and build a vehicle to compete in the global Formula SAE Series.
+							The competition goal is to design, manufacture, market, and race an open-wheel,
+							open-cockpit, and single-seat vehicle marketable to the weekend autocrosser. </p>-->
+						<ul class="actions">
+							<li><a href="{% url 'competition' %}" class="button">Learn More about the Competition</a></li>
+						</ul>
+					</div>
+					<a href="#three" class="goto-next scrolly">Next</a>
+				</section>
+
+			<!-- Three -->
+				<section id="three" class="spotlight style3 left">
+					<span class="image fit main bottom"><img src="{% static 'GMotorsports/images/car3.jpg' %}" alt="" /></span>
+					<div class="content">
+						<header>
+							<div style="color: white!important;">{% render_placeholder HomeCMS.thirdphead "640" %}</div>
+							<div style="color: white!important;">{% render_placeholder HomeCMS.thirdp1 "640" %}</div>
+							<!--<h2>Join Gopher Motosports</h2>-->
+							<!--<p>Be a part of the best Formula SAE team in Minnesota</p>-->
+						</header>
+						<div style="color: white!important;">{% render_placeholder HomeCMS.thirdp2 "640" %}</div>
+						<!--<p>
+							Gopher Motorsports is one large team made up of many subteams that provide a place for
+							students pursuing any major! Whether you are a mechanical engineer, a finance major,
+							a computer scientist, or any major you can think of, there are dozens of ways you
+							can contribute to the team.
+						</p>-->
+						<ul class="actions">
+							<li><a href="{% url 'join' %}" class="button">Join the Team</a></li>
+						</ul>
+					</div>
+					<a href="#four" class="goto-next scrolly">Next</a>
+				</section>
+
+			<!-- Four -->
+				<section id="four" class="wrapper style1 special fade-up">
+					<div class="container">
+						<header class="major">
+							<h2>Different Teams on Gopher Motorsports</h2>
+							<p>Find a team that interests you or just see what our team is made up of! Click on an icon to learn more about a subteam.</p>
+						</header>
+						<div class="box alt">
+							<div class="row gtr-uniform">
+								<section class="col-4 col-6-medium col-4-xsmall mobile-subteam-icons">
+									<a href="{% url 'aerodynamics' %}" style="border-bottom-color: transparent;">
+										<span class="icon solid alt major fas fa-location-arrow" style="opacity: 0.8;"></span>
+										<h3>Aerodynamics</h3>
+									</a>
+								</section>
+								<section class="col-4 col-6-medium col-4-xsmall mobile-subteam-icons">
+									<a href="{% url 'electrical' %}" style="border-bottom-color: transparent;">
+										<span class="icon solid alt major fas fa-bolt" style="opacity: 0.8;"></span>
+										<h3>Electrical</h3>
+									</a>
+								</section>
+								<section class="col-4 col-6-medium col-4-xsmall mobile-subteam-icons">
+									<a href="{% url 'engine' %}" style="border-bottom-color: transparent;">
+										<span class="icon solid alt major fas fa-gas-pump" style="opacity: 0.8;"></span>
+										<h3>Engine and Drivetrain</h3>
+									</a>
+								</section>
+								<section class="col-4 col-6-medium col-4-xsmall mobile-subteam-icons">
+									<a href="{% url 'ergonomics' %}" style="border-bottom-color: transparent;">
+										<span class="icon solid alt major fas fa-gamepad" style="opacity: 0.8;"></span>
+										<h3>Ergonomics and Controls</h3>
+									</a>
+								</section>
+								<section class="col-4 col-6-medium col-4-xsmall mobile-subteam-icons">
+									<a href="{% url 'frame_suspension' %}" style="border-bottom-color: transparent;">
+										<span class="icon solid alt major fas fa-crop-alt" style="opacity: 0.8;"></span>
+										<h3>Frame and Suspension</h3>
+									</a>
+								</section>
+								<section class="col-4 col-6-medium col-4-xsmall mobile-subteam-icons">
+									<a href="{% url 'external_relations' %}" style="border-bottom-color: transparent;">
+										<span class="icon solid alt major fas fa-comments-dollar" style="opacity: 0.8;"></span>
+										<h3>Marketing and External Relations</h3>
+									</a>
+								</section>
+							</div>
+						</div>
+					</div>
+				</section>
+
+	<div class="container">
+		{% include 'GMotorsports/Sponsors-Partial.html' %}
+	</div>
+
+{% endblock content %}

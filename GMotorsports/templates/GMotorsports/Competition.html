@@ -1,0 +1,70 @@
+{% extends "GMotorsports/base.html" %}
+{% load static cms_tags sekizai_tags %}
+{% block content %}
+
+<!-- Main -->
+    <div id="main" class="wrapper style1">
+        <div class="container">
+            <header class="major">
+                <h2>FSAE-Michigan Grand Prix</h2>
+                <p>Formula SAE is an international collegiate design competition sanctioned by the Society of Automotive Engineers where students develop and build an open-wheeled, open cockpit race car. In addition to being scored on the performance of their vehicle, teams compete on grounds of financial sustainability and
+                    engineering competency. After graduation, Formula SAE students are sought out for their passion and attention to detail in developing highly-engineered, high-performance products.</p>
+            </header>
+
+            <!-- Text -->
+                <section>
+                    <div style="color: white!important;">{% render_placeholder CompetitionCMS.rank "640" %}</div>
+                    <!--<h3>Gopher Motorsports is currently ranked #1 in Minnesota, #3 in the US and #31 in the World.</h3>-->
+
+                    <hr />
+
+                    <div class="text-center">
+                        <h3>Competition Point Breakdown</h3>
+                        <img class="center-fit" src="{% static 'GMotorsports/images/Competition Points Breakdown.jpg' %}">
+                    </div>
+
+                    <h2>Static Events: Design. Business. Cost.</h2>
+                    <ul>
+                        <li>
+                            <h4>Design: 150 points</h4>
+                            <p>The aim is to assess the engineering expertise and effort that went into the design of the car. Judges from industry evaluate the team on their engineering practices and adherence to the full design cycle, from concept through testing and iteration.</p>
+                        </li>
+                        <li>
+                            <h4>Business Presentation: 75 points</h4>
+                            <p>A true test of the team's ability to construct and present a comprehensive business plan. The team must understand their market, profitability, cost and business strategy.</p>
+                        </li>
+                        <li>
+                            <h4>Cost Analysis: 100 Points</h4>
+                            <p>The team must provide a manufacturing and cost report, showing they took budget into account as the car was developed. Realistically low-cost cars earn more points.</p>
+                        </li>
+                    </ul>
+                    <h2>Dynamic Events: Skidpad. Acceleration. Endurance. Efficiency.</h2>
+                    <p>Obviously the most exciting, yet nervewracking part of the competition is when the car whips around the track. </p>
+                    <ul>
+                        <li>
+                            <h4>Skidpad: 75 points</h4>
+                            <p>A test of the car's cornering abilities and lateral grip, this even features two constant radius circles in a figure-8 shape.</p>
+                        </li>
+                        <li>
+                            <h4>Acceleration: 100 points</h4>
+                            <p>During this 75 meter straight-line, the car's acceleration is put to the test.</p>
+                        </li>
+                        <li>
+                            <h4>Autocross: 125 points</h4>
+                            <p>The car completes two laps of a track consisting of straights, slaloms, and other track elements. Run solo, this allows the car to demonstrate acceleration, handling, and braking.</p>
+                        </li>
+                        <li>
+                            <h4>Endurance: 275 points</h4>
+                            <p>The ultimate test of the vehicle's reliability and design, this event features multiple laps, driven by two drivers as a single heat totaling 22km.  Multiple cars run at the same time, staggered, with passing allowed. The catch? The car may not stop, refuel, or fail in any way.</p>
+                        </li>
+                        <li>
+                            <h4>Efficiency: 100 points</h4>
+                            <p>Run as part of the Endurance event, the car is assessed on the amount of fuel used, with compensations being made for lap times.</p>
+                        </li>
+                    </ul>
+                    <hr />
+                </section>
+        </div>
+    </div>
+
+{% endblock content %}

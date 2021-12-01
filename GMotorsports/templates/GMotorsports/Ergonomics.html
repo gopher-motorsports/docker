@@ -1,0 +1,26 @@
+{% extends "GMotorsports/base.html" %}
+{% load static cms_tags sekizai_tags %}
+{% block content %}
+    <div id="main" class="wrapper style1">
+       <div class="container">
+            <header class="major">
+                <h2>Ergonomics Subteam</h2>
+                <div style="color: white!important;">{% render_placeholder Ergonomics.mainp "640" %}</div>
+                <!--<p>The Ergonomics and Controls Subteam is responsible for all parts the driver interacts with on the car. Notable designs include the brake system, seat, steering wheel, and pedal box. Ergo also collaborated with Electrical on paddle shifting and cockpit designs. Ergo works frequently with carbon fiber, leading many art layups during a typical design cycle. Often a smaller subteam, Ergo is welcome to anyone willing to participate and work on the car.</p>-->
+            </header>
+
+          <div class="container row d-flex justify-content-center ml-subteam">
+               <div>
+                   <img class="fit-subteam" src="{% static 'GMotorsports/images/Hunter_Wiehe.jpg' %}">
+               </div>
+               <div class="text-center">
+                     <h3>Hunter Wiehe</h3>
+                     <p>Ergonomics Lead</p>
+                     <p><b>Email: </b>wiehe009@umn.edu</p>
+               </div>
+           </div>
+
+         </div>
+        </div>
+    </div>
+{% endblock %}

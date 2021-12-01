@@ -1,0 +1,25 @@
+{% extends "GMotorsports/base.html" %}
+{% load static cms_tags sekizai_tags %}
+{% block content %}
+    <div id="main" class="wrapper style1">
+       <div class="container">
+        <header class="major">
+            <h2>Engine Subteam</h2>
+            <div style="color: white!important;">{% render_placeholder Engine.mainp "640" %}</div>
+            <!--<p>The Engine and Drivetrain Subteam is responsible for the power unit of the car, as well as transmitting that power to the ground. While designing an entire engine is an option, most teams opt to use an existing manufacturer's engine. This usually comes out of a motorcycle and is not optimized for use in a Formula SAE car. Our primary focus is to change that by developing custom/modifying existing parts to produce a reliable, predictable, and high output power unit. On the Engine Team you will find that we are composed of small groups that work on individual subsystems. These include: Intake/exhaust, fuel/oil, driveline, tuning/internals, and cooling. New members can expect to work in one or more of these groups, led by an upperclassman.</p>-->
+        </header>
+
+      <div class="container row d-flex justify-content-center ml-subteam">
+           <div>
+               <img class="fit-subteam" src="{% static 'GMotorsports/images/Mike_Marsden.png' %}">
+           </div>
+           <div class="text-center">
+                 <h3>Mike Marsden</h3>
+                 <p>Engine Lead</p>
+                 <p><b>Email: </b>marsd488@umn.edu</p>
+           </div>
+       </div>
+
+        </div>
+    </div>
+{% endblock %}

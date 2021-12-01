@@ -1,0 +1,25 @@
+{% extends "GMotorsports/base.html" %}
+{% load static cms_tags sekizai_tags %}
+{% block content %}
+    <div id="main" class="wrapper style1">
+       <div class="container">
+        <header class="major">
+            <h2>Frame & Suspension Subteam</h2>
+            <div style="color: white!important;">{% render_placeholder Frame_suspension.mainp "640" %}</div>
+            <!--<p>The frame and suspension subsystem is in charge of designing some of the most critical components on the car. We design and manufacture our own steel tube frame, which we also weld in house. We are also in charge of the suspension, choosing tires, tire assembly, and other components that help transmit loads from the tires through the suspension. The fame and suspension subteam is also heavily involved in the assembly of the car. Our members gain hands-on experience through machining, fixturing of the frame, and assembly of suspension components. The frame and suspension subteam works with other subteams to provide a platform that accommodates designs critical for the rest of the car.</p>-->
+        </header>
+
+      <div class="container row d-flex justify-content-center ml-subteam">
+           <div>
+               <img class="fit-subteam" src="{% static 'GMotorsports/images/Emma_Vossler.jpg' %}">
+           </div>
+           <div class="text-center">
+                 <h3>Emma Vossler</h3>
+                 <p>Frame and Suspension Lead</p>
+                 <p><b>Email: </b>vossl006@umn.edu</p>
+           </div>
+       </div>
+
+        </div>
+    </div>
+{% endblock %}

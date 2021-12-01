@@ -1,0 +1,72 @@
+{% extends "GMotorsports/base.html" %}
+{% load static %}
+
+{% block javascript %}
+
+<script>
+	$(window).on('load', function()
+	{
+	  $('#grid').masonry({
+		   itemSelector : '.grid-item',
+		   columnWidth : '.grid-sizer',
+			percentPosition: true,
+		   isAnimated: true,
+		   animationOptions: {
+				duration: 700,
+				easing: 'linear',
+				queue: false
+		   }
+	  });
+	});
+</script>
+
+{% endblock %}
+
+{% block content %}
+
+<!-- Main -->
+    <div id="main" class="wrapper style1">
+
+			<!-- Subteam section -->
+			<section id="four" class="wrapper style1 fade-up mt-sponsor">
+				<div class="container">
+
+					<header class="major">
+						<h2>Sponsors</h2>
+						<p>Sponsorship represents an investment in the training of elite engineering and business professionals of the future. Sponsorship is an excellent channel for recruiting top talent and showcasing your company’s investment in the community. </p>
+
+					</header>
+
+						{% include 'GMotorsports/Sponsors-Partial.html' %}
+
+					<div style="text-align: center;">
+						<p>Contact us and download our attached sponsorship proposal.</p>
+						<p>Your investment in Gopher Motorsports allows the smartest,
+							most motivated students to learn
+							real-life engineering and business
+							skills alongside our course curriculum.
+						</p>
+						<div class="box alt mt-5 container">
+								<div class="row gtr-uniform">
+									<section class="col-4 col-6-medium col-12-xsmall ml-proposal mobile-proposal">
+										<a href="https://0dc9d063-63f6-4ecb-b3b0-453f43a1b4c6.filesusr.com/ugd/04440a_f5192313ed5745828b2fba0637c30205.pdf" target="_blank">
+											<span class="fas fa-file-pdf fa-3x"></span>
+										</a>
+										<p>Sponsorship Proposal</p>
+									</section>
+									<section class="col-4 col-6-medium col-12-xsmall mt-2 mobile-proposal">
+										<ul class="actions">
+											<h4><li><a href="{% url 'contact' %}" class="button">Contact Us to Sponsor</a></li></h4>
+										</ul>
+									</section>
+								</div>
+							</div>
+					</div>
+
+				</div>
+
+			</section>
+
+    </div>
+
+{% endblock content %}

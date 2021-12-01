@@ -1,0 +1,106 @@
+{% load static cms_tags sekizai_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!--<link rel="stylesheet" href="{% static 'GMotorsports/css/bootstrap.min.css' %}">-->
+
+    <link rel="icon" type="image/png" href="{% static 'GMotorsports/images/wheel.png' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'GMotorsports/css/main.css' %}">
+
+    <noscript><link rel="stylesheet" href="{% static 'GMotorsports/css/noscript.css' %}" /></noscript>
+
+    {% render_block "css" %}
+
+    {% if title %}
+        <title>Gopher Motorsports</title>
+    {% else %}
+        <title>Gopher Motorsports</title>
+    {% endif %}
+</head>
+<body class="is-preload landing">
+    <div id="page-wrapper">
+
+        {% cms_toolbar %}
+
+        <!-- Header -->
+        <header id="header">
+            <h1 id="logo"><a href="{% url 'GMotorsports-home' %}">Gopher Motorsports</a></h1>
+            <nav id="nav">
+                <ul>
+                    <li><a href="{% url 'GMotorsports-home' %}">Home</a></li>
+                    <li><a href="{% url 'competition' %}">Competition</a></li>
+                    <li><a href="{% url 'cars' %}">Cars</a></li>
+                    <li><a href="{% url 'team' %}">Team</a></li>
+                    <li><a href="{% url 'sponsors' %}">Sponsors</a></li>
+                    <li><a href="{% url 'join' %}">Join</a></li>
+                    <li>
+                        <a>Subteams</a>
+                        <ul>
+                            <li><a href="{% url 'aerodynamics' %}">Aerodynamics</a></li>
+                            <li><a href="{% url 'electrical' %}">Electrical</a></li>
+                            <li><a href="{% url 'engine' %}">Engine and Drivetrain</a></li>
+                            <li><a href="{% url 'ergonomics' %}">Ergonomics and Controls</a></li>
+                            <li><a href="{% url 'frame_suspension' %}">Frame and Suspension</a></li>
+                            <li><a href="{% url 'external_relations' %}">Business</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                    <li><a href="{% url 'donate' %}" class="button secondary">Donate</a></li>
+                </ul>
+            </nav>
+        </header>
+
+    </div>
+
+
+    {% block content %}{% endblock %}
+
+    <!-- Footer -->
+        <footer id="footer">
+            <ul class="icons">
+                <li><a href="https://twitter.com/umnFSAE?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" class="icon brands alt fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
+                <li><a href="https://www.facebook.com/UMNGopherMotorsports/" class="icon brands alt fa-facebook-f" target="_blank"><span class="label">Facebook</span></a></li>
+                <li><a href="https://www.instagram.com/umngophermotorsports/?hl=en" class="icon brands alt fa-instagram" target="_blank"><span class="label">Instagram</span></a></li>
+                <li><a href="https://www.youtube.com/watch?v=eznXJmGhpgc" class="icon brands alt fab fa-youtube" target="_blank"><span class="label">YouTube</span></a></li>
+                <!--
+                <li><a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+                <li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+                <li><a href="#" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+                -->
+            </ul>
+            <ul class="copyright">
+                <li>&copy; Gopher Motorsports. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+            </ul>
+        </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="{% static 'GMotorsports/js/jquery.min.js' %}"></script>
+    <script src="{% static 'GMotorsports/js/jquery.scrolly.min.js' %}"></script>
+    <script src="{% static 'GMotorsports/js/jquery.dropotron.min.js' %}"></script>
+    <script src="{% static 'GMotorsports/js/jquery.scrollex.min.js' %}"></script>
+    <script src="{% static 'GMotorsports/js/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'GMotorsports/js/masonry.pkgd.min.js' %}"></script>
+    <script src="{% static 'GMotorsports/js/browser.min.js' %}"></script>
+    <script src="{% static 'GMotorsports/js/breakpoints.min.js' %}"></script>
+    <script src="{% static 'GMotorsports/js/util.js' %}"></script>
+    <script src="{% static 'GMotorsports/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'GMotorsports/js/main.js' %}"></script>
+    <!--
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    -->
+
+    {% render_block "js" %}
+
+    {% block javascript %}{% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+{% extends "GMotorsports/base.html" %}
+{% load static cms_tags sekizai_tags %}
+{% block content %}
+    <div id="main" class="wrapper style1">
+       <div class="container">
+        <header class="major">
+            <h2>External Relations Subteam</h2>
+            <div style="color: white!important;">{% render_placeholder External_relations.mainp "640" %}</div>
+            <!--<p>The Business team acts as the financial and external relations management branch of gopher motorsports. It serves to develop and maintain relations with sponsoring firms and industry professionals, manage the team's budget, and direct operations for a successful competitive trajectory.</p>-->
+        </header>
+
+      <div class="container row d-flex justify-content-center ml-subteam">
+           <div>
+               <img class="fit-subteam" src="{% static 'GMotorsports/images/Sam_Froehle.jpg' %}">
+           </div>
+           <div class="text-center">
+                 <h3>Sam Froehle</h3>
+                 <p>External Relations Lead</p>
+                 <p><b>Email: </b>froeh059@umn.edu</p>
+           </div>
+       </div>
+
+        </div>
+    </div>
+{% endblock %}
