@@ -21,8 +21,16 @@ jobs:
       run: | 
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
         
-    - name: Build Docker Image
-      run: docker build . --file Dockerfile --tag gophermotorsports/team_homepage:teamHomepage-PROD
+    - name: Build Docker Image Test
+      run: docker build . --file Dockerfile --tag gophermotorsports/team_homepage_test:teamHomepage-TEST-PROD
       
-    - name: Docker Push
-      run: docker push ${{secrets.DOCKER_USERNAME}}/team_homepage:teamHomepage-PROD
+    - name: Docker Push to Test Dockerhub Repo
+      run: docker push gophermotorsports/team_homepage_test:teamHomepage-TEST-PROD
+
+#    - name: Test if Site is Successfully Curl'd
+#      run: |
+#        if curl /URL/ works; then
+#         docker build. --file Dockerfile --tag gophermotorsports/team_homepage:teamHomepage-PROD
+#          docker push ${{secrets.DOCKER_USERNAME}}/team_homepage:teamHomepage-PROD
+#        else
+#          Alert dev.
