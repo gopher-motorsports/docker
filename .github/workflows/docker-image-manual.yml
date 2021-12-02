@@ -25,4 +25,4 @@ jobs:
       run: docker build . --file Dockerfile --tag gophermotorsports/team_homepage:teamHomepage-PROD
       
     - name: Docker Push
-      run: docker push ${{secrets.DOCKER_USER}}//team_homepage
+      run: docker push ${{secrets.DOCKER_USERNAME}}/team_homepage
