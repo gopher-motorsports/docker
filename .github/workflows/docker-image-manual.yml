@@ -24,10 +24,11 @@ jobs:
     - name: Build Docker Image Test
       run: |
         docker build . --file Dockerfile --tag gophermotorsports/team_homepage_test:teamHomepage-TEST-PROD
-        if docker run --rm curlimages/curl:7:80.0 --version
-        then
+        docker run -d -p 3000:3000 gophermotorsports/team_homepage_test:teamHomepage-TEST-PROD
+        if: curl http://localhost:3000
+        then:
           docker push gophermotorsports/team_homepage_test:teamHomepage-TEST-PROD
-        else
+        else:
           exit 1
         fi
           
@@ -63,7 +64,7 @@ jobs:
         # email body as text
         body: ${{ github.job }} job in worflow ${{ github.workflow }} of ${{ github.repository }} has ${{ job.status }}
         # comma-separated string, send email to
-        to: johndoe@gmail.com,doejohn@gmail.com
+        to: apple266@umn.edu,boris040@umn.edu
         # from email name
         from: github
         
