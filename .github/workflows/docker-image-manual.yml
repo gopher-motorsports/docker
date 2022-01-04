@@ -25,10 +25,11 @@ jobs:
       run: |
         docker build . --file Dockerfile --tag gophermotorsports/team_homepage_test:teamHomepage-TEST-PROD
         docker run -d -p 3000:3000 gophermotorsports/team_homepage_test:teamHomepage-TEST-PROD
-        if: curl http://localhost:3000
-        then:
+        if -s --head --request GET http://localhost:3000 | grep "200 OK" > /dev/null; then
+          echo "site is UP"
           docker push gophermotorsports/team_homepage_test:teamHomepage-TEST-PROD
-        else:
+        else
+          echo "site is DOWN"
           exit 1
         fi
           
