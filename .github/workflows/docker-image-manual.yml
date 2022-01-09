@@ -23,9 +23,11 @@ jobs:
         
     - name: Build Docker Image Test
       run: |
-        docker build . --file Dockerfile --tag gophermotorsports/team_homepage_test:teamHomepage-TEST-PROD
-        docker run -d gophermotorsports/team_homepage_test:teamHomepage-TEST-PROD
-        docker ps
+        pip install -r requirements.txt
+        python3 manage.py runserver
+        #docker build . --file Dockerfile --tag gophermotorsports/team_homepage_test:teamHomepage-TEST-PROD
+        #docker run -d gophermotorsports/team_homepage_test:teamHomepage-TEST-PROD
+        #docker ps
         echo "----------------------------------------------------------------------------------"
         curl http://localhost:8000
         #if curl -s --head --request GET http://localhost:8000 | grep "200 OK" > /dev/null; then
