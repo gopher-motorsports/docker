@@ -13,17 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Action
-    - uses: actions/checkout@v2
-   
-    - name: Docker Login
-      env:
-        DOCKER_USER : ${{secrets.DOCKER_USERNAME}}
-        DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
-      run: | 
-        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
-        
-    - name: Report Status Email     
+    - name: Report Status Email
       if: always()
       uses: dawidd6/action-send-mail@v2
       with:
