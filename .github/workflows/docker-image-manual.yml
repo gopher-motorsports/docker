@@ -20,23 +20,29 @@ jobs:
         DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
       run: | 
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
-        
-    - name: Build Docker Image Test
-      run: |
-        pip install -r requirements.txt
-        python3 manage.py runserver
-         docker build . --file Dockerfile --tag gophermotorsports/team_homepage_test:teamHomepage-TEST-PROD
-         docker run -d gophermotorsports/team_homepage_test:teamHomepage-TEST-PROD
-         docker ps
-         echo "----------------------------------------------------------------------------------"
-         curl http://localhost:8000
-         if curl -s --head --request GET http://localhost:8000 | grep "200 OK" > /dev/null; then
-           echo "site is UP"
-           docker push gophermotorsports/team_homepage_test:teamHomepage-TEST-PROD
-        else
-          echo "site is DOWN"
-          exit 1
-        fi
+#   --------------------        
+#    - name: Build Docker Image Test
+#      run: |
+#        pip install -r requirements.txt
+#        python3 manage.py runserver
+#         docker build . --file Dockerfile --tag gophermotorsports/team_homepage_test:teamHomepage-TEST-PROD
+#         docker run -d gophermotorsports/team_homepage_test:teamHomepage-TEST-PROD
+#         docker ps
+#         echo "----------------------------------------------------------------------------------"
+#         curl http://localhost:8000
+#         if curl -s --head --request GET http://localhost:8000 | grep "200 OK" > /dev/null; then
+#           echo "site is UP"
+#           docker push gophermotorsports/team_homepage_test:teamHomepage-TEST-PROD
+#        else
+#          echo "site is DOWN"
+#          exit 1
+#        fi
+
+    - name: Insall dependencies
+      run:  pip install -r requirements.txt
+      
+    - name: Launch project
+      run: python manage.py runserver
           
       
 #    - name: Docker Push to Test Dockerhub Repo
