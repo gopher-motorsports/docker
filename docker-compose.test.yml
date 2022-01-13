@@ -1,8 +1,0 @@
-sut:
-  build: .
-  dockerfile: Dockerfile.test
-  ports:
-    - 8000:8000
-  command: /code/test_server.sh
-  env_file:
-    - ./.env.prod
