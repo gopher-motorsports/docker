@@ -38,11 +38,10 @@ jobs:
 #          exit 1
 #        fi
 
-    - name: Insall dependencies
-      run:  pip install -r requirements.txt
-      
-    - name: Launch project
-      run: python manage.py runserver
+    - name: Compose up
+      run:  docker-compose up
+    - name: Curl localhost
+      run: curl localhost:8000
           
       
 #    - name: Docker Push to Test Dockerhub Repo
