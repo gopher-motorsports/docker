@@ -31,4 +31,4 @@ jobs:
         to: apple266@umn.edu,boris040@umn.edu
         # from email name
         from: github
-# test
+# tests
