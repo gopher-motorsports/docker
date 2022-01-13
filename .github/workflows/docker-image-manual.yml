@@ -39,7 +39,7 @@ jobs:
 #        fi
 
     - name: Compose up
-      run:  docker-compose up
+      run:  docker-compose up -d
     - name: Curl localhost
       run: curl localhost:8000
           
