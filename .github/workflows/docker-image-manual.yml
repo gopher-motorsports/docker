@@ -40,6 +40,10 @@ jobs:
 
     - name: Compose up
       run:  docker-compose up -d
+    - name: Sleep until container launched
+      uses: jakejarvis/wait-action@master
+      with:
+        time: '100s'
     - name: Curl localhost
       run: curl localhost:8000
           
