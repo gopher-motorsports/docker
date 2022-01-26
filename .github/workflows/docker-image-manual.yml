@@ -46,6 +46,8 @@ jobs:
         time: '100s'
     - name: Curl localhost
       run: curl localhost:8000
+    - name: Curl localhist/Cars
+      run: curl localhost:8000/Cars/
           
       
 #    - name: Docker Push to Test Dockerhub Repo
