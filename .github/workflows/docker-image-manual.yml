@@ -44,13 +44,16 @@ jobs:
     - name: Sleep until container launched
       uses: jakejarvis/wait-action@master
       with:
-        time: '100s'
+        time: '50s'
         
     - name: Curl localhost
       run: curl localhost:8000
       
     - name: Curl localhost/Cars
       run: curl localhost:8000/Cars/
+      
+    - name: Build Docker Image
+      run: docker build . --file Dockerfile --tag teamHomepage-TEST-PROD
           
     - name: Docker Push to Test Dockerhub Repo
       run: docker push gophermotorsports/team_homepage_test:teamHomepage-TEST-PROD
