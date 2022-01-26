@@ -40,18 +40,20 @@ jobs:
 
     - name: Compose up
       run:  docker-compose up -d
+      
     - name: Sleep until container launched
       uses: jakejarvis/wait-action@master
       with:
         time: '100s'
+        
     - name: Curl localhost
       run: curl localhost:8000
-    - name: Curl localhist/Cars
+      
+    - name: Curl localhost/Cars
       run: curl localhost:8000/Cars/
           
-      
-#    - name: Docker Push to Test Dockerhub Repo
-#     run: docker push gophermotorsports/team_homepage_test:teamHomepage-TEST-PROD
+    - name: Docker Push to Test Dockerhub Repo
+      run: docker push gophermotorsports/team_homepage_test:teamHomepage-TEST-PROD
       
       
 #    - name: Report Status Slack
