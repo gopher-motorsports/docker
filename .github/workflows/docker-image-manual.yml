@@ -51,6 +51,9 @@ jobs:
       
     - name: Curl localhost/Cars
       run: curl localhost:8000/Cars/
+    
+    - name: Update pip
+      run: pip install --upgrade pip
       
     - name: Build Docker Image
       run: docker build . --file Dockerfile --tag gophermotorsports/team_homepage_test:teamHomepage-TEST-PROD
