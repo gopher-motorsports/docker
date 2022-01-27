@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: Website CI/CD Testing
 
 on:
   push:
@@ -74,7 +74,12 @@ jobs:
       uses: ravsamhq/notify-slack-action@v1
       with:
         status: ${{ job.status }}
-        notify_when: 'failure, warnings, success'
+        notification_title: '{workflow} has {status_message}'
+        message_format: '{emoji} *{workflow}* {status_message} in <{repo_url}|{repo}>'
+        footer: 'Linked Repo <{repo_url}|{repo}>'
+        notify_when: 'failure,warnings,success'
+        mention_users: 'U02ESNN2PEY'
+        mention_users_when: 'failure,warnings,success'
       env:
         SLACK_WEBHOOK_URL: ${{ secrets.ACTION_MONITORING_SLACK }}
         
