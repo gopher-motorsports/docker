@@ -71,7 +71,7 @@ jobs:
       
       
     - name: Report Status Slack
-    - uses: ravsamhq/notify-slack-action@v1
+      uses: ravsamhq/notify-slack-action@v1
       if: always()
       with:
         status: ${{ job.status }}
