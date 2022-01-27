@@ -104,5 +104,4 @@ jobs:
 #          docker push ${{secrets.DOCKER_USERNAME}}/team_homepage:teamHomepage-PROD
 #        else
 #          Alert dev.
-#
 
