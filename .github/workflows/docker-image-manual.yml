@@ -44,7 +44,7 @@ jobs:
     - name: Sleep until container launched
       uses: jakejarvis/wait-action@master
       with:
-        time: '50s'
+        time: '40s'
         
     - name: Curl localhost
       run: curl localhost:8000
@@ -57,6 +57,11 @@ jobs:
       
     - name: Upgrade setuptools
       run: pip install --upgrade setuptools
+    
+    - name: Allow setuptools to update/install
+      uses: jakejarvis/wait-action@master
+      with:
+        time: '10s'
       
     - name: Build Docker Image
       run: docker build --file Dockerfile -t gophermotorsports/team_homepage:teamHomepage-PROD .
