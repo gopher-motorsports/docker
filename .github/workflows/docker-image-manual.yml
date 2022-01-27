@@ -70,17 +70,17 @@ jobs:
       run: docker push gophermotorsports/team_homepage:teamHomepage-PROD
       
       
-#    - name: Report Status Slack
-#   - uses: ravsamhq/notify-slack-action@v1
-#      if: always()
-#      with:
-#        status: ${{ job.status }}
-#        notification_title: '{workflow} has {status_message}'
-#        notify_when: 'failure'
-#        mention_users: 'U0160UUNH8S,U02DLJT9DSR'
-#        mention_users_when: 'failure,warnings'
-#      env:
-#        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+    - name: Report Status Slack
+    - uses: ravsamhq/notify-slack-action@v1
+      if: always()
+      with:
+        status: ${{ job.status }}
+        notification_title: '{workflow} has {status_message}'
+        notify_when: 'failure'
+        mention_users: 'U0160UUNH8S,U02DLJT9DSR'
+        mention_users_when: 'failure,warnings'
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         
     - name: Report Status Email
       if: always()
