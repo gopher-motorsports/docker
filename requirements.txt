@@ -21,4 +21,3 @@ djangocms-text-ckeditor==3.10.0
 easy-thumbnails==2.7
 pytz==2020.1
 gunicorn
-psycopg2>=2.8
